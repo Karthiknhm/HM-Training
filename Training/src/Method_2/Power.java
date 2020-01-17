@@ -1,23 +1,22 @@
-package Date_12_12_2019;
-
+package Method_2;
 import java.util.Scanner;
-
-public class power
+public class Power 
 {
 	public static void main(String[] args) 
 	{
 		Scanner sc1 = new Scanner(System.in);
-		System.out.println("Enter the value :");
-		String s1 = sc1.next();
+		int number = sc1.nextInt();
 		sc1.close();
-		powertoAdding(s1);
+		power(number);
 	}
 	
-	//Input value is segregate first and neighbor letter and then power the two values
+	//Input number is convert into string
+	//String value is segregate first and neighbor letter and then power the two values
 	//Adding Power values
-	static void powertoAdding(String s1) 
+	static void power(int number) 
 	{
 		double result = 0;
+		String s1 = Integer.toString(number);
 		
 		for(int i=0;i<s1.length()-1;i++)
 		{
@@ -28,8 +27,7 @@ public class power
 			double d1 = Math.pow(n1, n2);
 			result = result + d1;
 		}
-		
-		//Last letter adding into result 
+		//Last letter adding into result
 		int l1 = s1.charAt(s1.length()-1) - 48;
 		int l2 = s1.charAt(0) - 48;
 		
@@ -37,7 +35,6 @@ public class power
 		double d1 = Math.pow(l1, l2);
 		result = result + d1;
 		
-		System.out.println("Result : "+result);
+		System.out.println(result);
 	}
-		
 }

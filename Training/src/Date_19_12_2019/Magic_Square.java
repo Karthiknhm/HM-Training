@@ -1,4 +1,3 @@
-
 package Date_19_12_2019;
 import java.util.Scanner;
 public class Magic_Square 
@@ -22,6 +21,8 @@ public class Magic_Square
 	// odd number matrix
 	static void solve_matrix(int n,int[][] arr) 
 	{
+		
+		
 		int row = n/2;
 		int column = n-1;
 		

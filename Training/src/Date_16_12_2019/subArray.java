@@ -46,14 +46,17 @@ public class subArray
 						{
 							arr1[pos] = arr[i];pos++;
 							arr1[pos] = arr[i+1];pos++;
+							
 							for(int k=i+2;k<=j;k++)
 							{
 								arr1[pos] = arr[k];
 								pos++;
 							}
+							
 							for(int l=0;l<pos;l++)
 								System.out.print(arr1[l]+",");
 						}
+						
 						if(sum>input)
 						{
 							break;

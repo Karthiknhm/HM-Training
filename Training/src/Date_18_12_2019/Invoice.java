@@ -76,5 +76,5 @@ public class Invoice
 }
 
 
-//String input = "Name: Sabhari Date: 24-11-2000 Phone: 8248216179 Total amount: 15000.00 Tax: 1000.00";
+//String input = "Date: 24-11-2000 Tax: 1000.00 Name: Sabhari  Phone: 8248216179 Total amount: 15000.00 ";
 

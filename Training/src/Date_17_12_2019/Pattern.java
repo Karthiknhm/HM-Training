@@ -8,7 +8,13 @@ public class Pattern
 		System.out.println("Enter the value :");
 		int n = sc1.nextInt();
 		sc1.close();
-		
+		TriAngle(n);
+	}
+	
+	//Input value to start triangle Printing
+	//When will come the bottom side value zero at the time end the Loop
+	static void TriAngle(int n)
+	{
 		//Print the Triangle
 		for(int i=n;i>=0;i--)
 		{
@@ -18,6 +24,7 @@ public class Pattern
 				System.out.print(k+" ");
 			for(int l=n-1;l>=i;l--)
 				System.out.print(l+" ");
+			
 			System.out.println();
 		}
 	}

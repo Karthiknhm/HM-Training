@@ -1,15 +1,10 @@
-package Date_12_12_2019;
+package Method_2;
 
-import java.util.Scanner;
-
-public class RunLengthEncode 
+public class Runlength_encode 
 {
 	public static void main(String[] args) 
 	{
-		Scanner sc1 = new Scanner(System.in);
-		System.out.println("Enter the Encode value :");
-		String s1 = sc1.next();
-		sc1.close();
+		String s1 = "a2b10cf4"; 
 		String s2 = "";
 		int count = 0;
 		encode(s1,s2,count);
@@ -20,10 +15,12 @@ public class RunLengthEncode
 	{
 		for(int i=0;i<s1.length();i++)
 		{
+			char ch = s1.charAt(i);
+			
 			// check the value is not in the range of 'a - z' means count the value
-			if(!(s1.charAt(i)>=97 && s1.charAt(i)<=122))
+			if(!(ch>=97 && ch<=122))
 			{
-				int n = s1.charAt(i) - 48;
+				int n = ch - 48;
 				count = count*10 + n;
 				
 				//Count is Zero means s2 String empty here
@@ -47,7 +44,6 @@ public class RunLengthEncode
 				count = 0;
 			}
 		}
-		
 		//last stored value print here
 		for(int j=1;j<=count;j++)
 			System.out.print(s2);
