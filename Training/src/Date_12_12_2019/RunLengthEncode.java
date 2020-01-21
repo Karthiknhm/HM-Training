@@ -2,10 +2,11 @@ package Date_12_12_2019;
 
 import java.util.Scanner;
 
-public class RunLengthEncode 
+public class RunLengthEncode
 {
 	public static void main(String[] args) 
 	{
+		long startTime   = System.nanoTime();
 		Scanner sc1 = new Scanner(System.in);
 		System.out.println("Enter the Encode value :");
 		String s1 = sc1.next();
@@ -13,6 +14,9 @@ public class RunLengthEncode
 		String s2 = "";
 		int count = 0;
 		encode(s1,s2,count);
+		long endTime   = System.nanoTime();
+		long totalTime = endTime - startTime;
+		System.out.println("\nNano seconds :"+totalTime);
 	}
 	
 	//Find number value and then before letter is printed the number value times

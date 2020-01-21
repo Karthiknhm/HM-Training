@@ -1,13 +1,18 @@
 package Method_2;
 
+
 public class Runlength_encode 
 {
 	public static void main(String[] args) 
 	{
+		long startTime   = System.nanoTime();
 		String s1 = "a2b10cf4"; 
 		String s2 = "";
 		int count = 0;
 		encode(s1,s2,count);
+		long endTime   = System.nanoTime();
+		long totalTime = endTime - startTime;
+		System.out.println("\nNano seconds :"+totalTime);
 	}
 	
 	//Find number value and then before letter is printed the number value times
@@ -40,7 +45,7 @@ public class Runlength_encode
 				}
 				
 				//Letter one by one Store s2 string here and then count also Zero
-				s2 = s2 + s1.charAt(i);
+				s2 = s2 + ch;
 				count = 0;
 			}
 		}

@@ -4,6 +4,7 @@ public class Countdays
 {
 	public static void main(String[] args)
 	{
+		long startTime   = System.nanoTime();
 		Scanner sc1 = new Scanner(System.in);
 		System.out.println("Enter the From (dd-mm-yyyy) :");
 		String from_date = sc1.nextLine();
@@ -11,6 +12,9 @@ public class Countdays
 		String to_date = sc1.nextLine();
 		sc1.close();
 		count(from_date,to_date);
+		long endTime   = System.nanoTime();
+		long totalTime = endTime - startTime;
+		System.out.println("Nano seconds :"+totalTime);
 	}
 	
 	//Counting days between two days

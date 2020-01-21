@@ -6,11 +6,15 @@ public class power
 {
 	public static void main(String[] args) 
 	{
+		long startTime   = System.nanoTime();
 		Scanner sc1 = new Scanner(System.in);
 		System.out.println("Enter the value :");
 		String s1 = sc1.next();
 		sc1.close();
 		powertoAdding(s1);
+		long endTime   = System.nanoTime();
+		long totalTime = endTime - startTime;
+		System.out.println("Nano seconds :"+totalTime);
 	}
 	
 	//Input value is segregate first and neighbor letter and then power the two values
@@ -39,5 +43,4 @@ public class power
 		
 		System.out.println("Result : "+result);
 	}
-		
 }
