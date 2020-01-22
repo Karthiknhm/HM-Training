@@ -1,46 +1,57 @@
 package Method_2;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-public class ValidPassword 
+public class ValidPassword
 {
 	public static void main(String[] args) 
 	{
-		long startTime   = System.nanoTime();
+		long startTime = System.nanoTime();
 		Scanner sc1 = new Scanner(System.in);
-		System.out.println("Enter the Password :");
-		String pw = sc1.next();
+		System.out.println("Enter the password :");
+		String password = sc1.nextLine();
 		sc1.close();
-		check(pw);
+		checkpassword(password);
 		long endTime   = System.nanoTime();
 		long totalTime = endTime - startTime;
 		System.out.println("Nano seconds :"+totalTime);
 	}
 	
-	//check the password is valid or not
-	static void check(String pw) 
+	//Check password is valid or not
+	static void checkpassword(String password) 
 	{
-		String[] s1 = {".*[a-z].*", ".*[A-Z].*", ".*[0-9].*", ".*\\W.*"};
-		int length = s1.length;
-		int total = pw.length();
-		int count = 0;
-			
-		for(int i=0;i<length;i++)
-		{
-			Pattern p = Pattern.compile(s1[i]);
-			Matcher m1 = p.matcher(pw);
-			
-			if(m1.find())
-				count++;
-			else
-				break;
-		}
+		int length = password.length();
 		
-		if(count==4 && total>=8 && total<=15)
-			System.out.println("Password Valid");
+		//check password must be 8 to 15 character
+		if(length>=8 && length<=15)
+		{
+			int small_alphabet = 0, capital_alphabet = 0;
+			int numeric = 0, special_character = 0;
+			
+			for(int i=0;i<length;i++)
+			{
+				char ch = password.charAt(i);
+				
+				//small_alphabet
+				if(ch>='a' && ch<='z')
+					small_alphabet++;
+				
+				//capital_alphabet
+				else if(ch>='A' && ch<='Z')
+					capital_alphabet++;
+				
+				//numeric
+				else if(ch>='0' && ch<='9')
+					numeric++;
+				
+				//special_character
+				else
+					special_character++;
+			}
+			if(small_alphabet>=1 && capital_alphabet>=1 && numeric>=1 && special_character>=1)
+				System.out.println("Password is valid");
+			else
+				System.out.println("Password is invalid");
+		}
 		else
-			System.out.println("Password Not Valid : \n* Password must be 8 to 15 characters \n* At least one Capital letter "
-					+ "\n* At least one small letter \n* At least one Number \n* At least one Special character");
+			System.out.println("Password is invalid");
 	}
 }
